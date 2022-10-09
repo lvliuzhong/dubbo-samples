@@ -1,6 +1,6 @@
 package org.example.a.service.impl;
 
-import org.apache.dubbo.config.annotation.DubboReference;
+import org.apache.dubbo.config.annotation.Reference;
 import org.example.a.service.TestService;
 import org.example.b.facade.UserFacade;
 import org.springframework.stereotype.Service;
@@ -15,10 +15,10 @@ import org.springframework.stereotype.Service;
 public class TestServiceImpl implements TestService {
 
 
-//    @DubboReference(injvm = false)
-//    private UserFacade userFacade;
-    @DubboReference
+    @Reference(injvm = false)
     private UserFacade userFacade;
+//    @DubboReference
+//    private UserFacade userFacade;
 
     @Override
     public Long get() {
